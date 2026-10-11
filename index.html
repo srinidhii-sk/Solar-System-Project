@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>AstroExplore</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+        href="styles.css">
+
+    <!-- THREE JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- ORBIT CONTROLS -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+</head>
+
+<body>
+
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            AstroExplore
+        </div>
+
+        <div class="nav-links">
+
+            <button class="nav-btn active"
+                onclick="switchTab('home')">
+                Home
+            </button>
+
+            <button class="nav-btn"
+                onclick="switchTab('facts')">
+                Visual Facts Hub
+            </button>
+
+            <button class="nav-btn"
+                onclick="switchTab('explore')">
+                3D Orrery Engine
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================================
+         HOME SECTION
+    ========================================== -->
+
+    <section id="home-view"
+        class="view-panel active">
+
+        <div class="visual-canvas-container">
+
+            <div class="visual-space-telemetry"></div>
+
+            <div class="hero-overlay">
+
+                <h1>
+                    Planets Exploration
+                </h1>
+
+                <p>
+                    Explore planets with beautiful imagery,
+                    real-time orbit simulation,
+                    and interactive 3D space visuals.
+                </p>
+
+                <button class="cta-btn"
+                    onclick="switchTab('explore')">
+
+                    Launch Orrery Engine
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         FACTS HUB
+    ========================================== -->
+
+    <section id="facts-view"
+        class="view-panel">
+
+        <div class="facts-container">
+
+            <h2>
+                Celestial Intelligence Hub
+            </h2>
+
+            <p class="subtitle">
+                Planet images loaded directly from assets folder
+            </p>
+
+
+            <!-- PLANET GRID -->
+
+            <div class="planet-grid">
+
+
+                <!-- MERCURY -->
+                <div class="planet-card">
+
+                    <div class="micro-render-frame">
+                        <img src="assets/Mercury.png"
+                            alt="Mercury"
+                            class="planet-hub-img">
+                    </div>
+
+                    <h3>Mercury</h3>
+
+                    <div class="planet-badge">
+                        Terrestrial
+                    </div>
+
+                    <div class="stat-row">
+                        <span class="stat-label">Diameter</span>
+                        <span class="stat-value">4,879 km</span>
+                    </div>
+
+                    <div class="stat-row">
+                        <span class="stat-label">Temperature</span>
+                        <span class="stat-value">430°C</span>
+                    </div>
+
+                    <p class="planet-desc">
+                        Mercury is the closest planet to the Sun.
+                    </p>
+
+                </div>
+
+
+                <!-- VENUS -->
+                <div class="planet-card">
+
+                    <div class="micro-render-frame">
+                        <img src="assets/Venus.png"
+                            alt="Venus"
+                            class="planet-hub-img">
+                    </div>
+
+                    <h3>Venus</h3>
+
+                    <div class="planet-badge">
+                        Terrestrial
+                    </div>
+
+                    <div class="stat-row">
+                        <span class="stat-label">Diameter</span>
+                        <span class="stat-value">12,104 km</span>
+                    </div>
+
+                    <div class="stat-row">
+                        <span class="stat-label">Temperature</span>
+                        <span class="stat-value">465°C</span>
+                    </div>
+
+                    <p class="planet-desc">
+                        Venus is the hottest planet in our solar system.
+                    </p>
+
+                </div>
+
+
+                <!-- EARTH -->
+                <div class="planet-card">
+
+                    <div class="micro-render-frame">
+                        <img src="assets/Earth.png"
+                            alt="Earth"
+                            class="planet-hub-img">
+                    </div>
+
+                    <h3>Earth</h3>
+
+                    <div class="planet-badge">
+                        Terrestrial
+                    </div>
+
+                    <div class="stat-row">
+                        <span class="stat-label">Diameter</span>
+                        <span class="stat-value">12,756 km</span>
+                    </div>
+
+                    <div class="stat-row">
+                        <span class="stat-label">Temperature</span>
+                        <span class="stat-value">15°C</span>
+                    </div>
+
+                    <p class="planet-desc">
+                        Earth is the only known planet with life.
+                    </p>
+
+                </div>
+
+
+                <!-- MARS -->
+                <div class="planet-card">
+
+                    <div class="micro-render-frame">
+                        <img src="assets/Mars.png"
+                            alt="Mars"
+                            class="planet-hub-img">
+                    </div>
+
+                    <h3>Mars</h3>
+
+                    <div class="planet-badge">
+                        Terrestrial
+                    </div>
+
+                    <div class="stat-row">
+                        <span class="stat-label">Diameter</span>
+                        <span class="stat-value">6,792 km</span>
+                    </div>
+
+                    <div class="stat-row">
+                        <span class="stat-label">Temperature</span>
+                        <span class="stat-value">-63°C</span>
+                    </div>
+
+                    <p class="planet-desc">
+                        Mars is called the Red Planet.
+                    </p>
+
+                </div>
+
+
+                <!-- JUPITER -->
+                <div class="planet-card">
+
+                    <div class="micro-render-frame">
+                        <img src="assets/Jupiter.png"
+                            alt="Jupiter"
+                            class="planet-hub-img">
+                    </div>
+
+                    <h3>Jupiter</h3>
+
+                    <div class="planet-badge">
+                        Gas Giant
+                    </div>
+
+                    <div class="stat-row">
+                        <span class="stat-label">Diameter</span>
+                        <span class="stat-value">142,984 km</span>
+                    </div>
+
+                    <div class="stat-row">
+                        <span class="stat-label">Temperature</span>
+                        <span class="stat-value">-110°C</span>
+                    </div>
+
+                    <p class="planet-desc">
+                        Jupiter is the largest planet in the solar system.
+                    </p>
+
+                </div>
+
+
+                <!-- SATURN -->
+                <div class="planet-card">
+
+                    <div class="micro-render-frame">
+                        <img src="assets/Saturn.png"
+                            alt="Saturn"
+                            class="planet-hub-img">
+                    </div>
+
+                    <h3>Saturn</h3>
+
+                    <div class="planet-badge">
+                        Gas Giant
+                    </div>
+
+                    <div class="stat-row">
+                        <span class="stat-label">Diameter</span>
+                        <span class="stat-value">120,536 km</span>
+                    </div>
+
+                    <div class="stat-row">
+                        <span class="stat-label">Temperature</span>
+                        <span class="stat-value">-140°C</span>
+                    </div>
+
+                    <p class="planet-desc">
+                        Saturn is famous for its beautiful ring system.
+                    </p>
+
+                </div>
+
+
+                <!-- URANUS -->
+                <div class="planet-card">
+
+                    <div class="micro-render-frame">
+                        <img src="assets/Uranus.png"
+                            alt="Uranus"
+                            class="planet-hub-img">
+                    </div>
+
+                    <h3>Uranus</h3>
+
+                    <div class="planet-badge">
+                        Ice Giant
+                    </div>
+
+                    <div class="stat-row">
+                        <span class="stat-label">Diameter</span>
+                        <span class="stat-value">51,118 km</span>
+                    </div>
+
+                    <div class="stat-row">
+                        <span class="stat-label">Temperature</span>
+                        <span class="stat-value">-195°C</span>
+                    </div>
+
+                    <p class="planet-desc">
+                        Uranus rotates on its side unlike other planets.
+                    </p>
+
+                </div>
+
+
+                <!-- NEPTUNE -->
+                <div class="planet-card">
+
+                    <div class="micro-render-frame">
+                        <img src="assets/Neptune.png"
+                            alt="Neptune"
+                            class="planet-hub-img">
+                    </div>
+
+                    <h3>Neptune</h3>
+
+                    <div class="planet-badge">
+                        Ice Giant
+                    </div>
+
+                    <div class="stat-row">
+                        <span class="stat-label">Diameter</span>
+                        <span class="stat-value">49,528 km</span>
+                    </div>
+
+                    <div class="stat-row">
+                        <span class="stat-label">Temperature</span>
+                        <span class="stat-value">-200°C</span>
+                    </div>
+
+                    <p class="planet-desc">
+                        Neptune has the strongest winds in the solar system.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         3D EXPLORE SECTION
+    ========================================== -->
+
+    <section id="explore-view"
+        class="view-panel">
+
+        <!-- THREE JS -->
+        <div id="canvas-container"></div>
+
+
+        <!-- UI PANEL -->
+
+        <div id="ui-container">
+
+            <h3>
+                Simulation Controller
+            </h3>
+
+            <div class="control-group">
+
+                <label>
+                    Select Planet
+                </label>
+
+                <select id="planet-select">
+
+                    <option value="none">
+                        Free Camera
+                    </option>
+
+                    <option value="sun">
+                        Sun
+                    </option>
+
+                    <option value="earth">
+                        Earth
+                    </option>
+
+                    <option value="mars">
+                        Mars
+                    </option>
+
+                    <option value="jupiter">
+                        Jupiter
+                    </option>
+
+                    <option value="saturn">
+                        Saturn
+                    </option>
+
+                    <option value="uranus">
+                        Uranus
+                    </option>
+
+                    <option value="neptune">
+                        Neptune
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="control-group">
+
+                <button id="pause-btn">
+                    Pause Orbits
+                </button>
+
+            </div>
+
+            <div id="info-panel">
+                Select a planet to track.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- JS -->
+    <script src="app.js"></script>
+
+</body>
+
+</html>
